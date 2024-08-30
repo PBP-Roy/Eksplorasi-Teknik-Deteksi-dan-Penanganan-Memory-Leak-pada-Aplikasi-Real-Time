@@ -1,0 +1,41 @@
+Dr. Memory version 2.6.0 build 0 built on Sep 21 2023 17:48:48
+Windows version: WinVer=105;Rel=2009;Build=22631;Edition=Core
+Dr. Memory results for pid 16448: "Memory_leak3.exe"
+Application cmdline: ""C:\Users\aisla\OneDrive\Personal\kuliah\MAT KUL\Semester 3\Prinsip Pemrograman\Praktek\Praktikum 1\Experimen\New folder\Memory_leak3.exe""
+Recorded 124 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                       [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv        
+# 5 .text           
+# 6 mainCRTStartup  
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.184 in thread 1852
+Note: instruction: cmp    %eax $0x0000001a
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                       [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv        
+# 5 .text           
+# 6 mainCRTStartup  
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.185 in thread 1852
+Note: instruction: data16 mov    %cx -> 0x00000234(%ebx,%eax,2)
+
+Error #3: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                       [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv        
+# 5 .text           
+# 6 mainCRTStartup  
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.190 in thread 1852
+Note: instruction: test   %eax %eax

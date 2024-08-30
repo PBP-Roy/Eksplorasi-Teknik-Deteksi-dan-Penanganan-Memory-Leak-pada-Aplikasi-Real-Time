@@ -1,0 +1,72 @@
+Dr. Memory version 2.6.0 build 0 built on Sep 21 2023 17:48:48
+Windows version: WinVer=105;Rel=2009;Build=22631;Edition=Core
+Dr. Memory results for pid 828: "memory_leak4.exe"
+Application cmdline: ""C:\Users\aisla\OneDrive\Personal\kuliah\MAT KUL\Semester 3\Prinsip Pemrograman\Praktek\Praktikum 1\Experimen\New folder\memory_leak4.exe""
+Recorded 124 suppression(s) from default C:\Program Files (x86)\Dr. Memory\bin\suppress-default.txt
+
+Error #1: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                       [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv        
+# 5 .text           
+# 6 mainCRTStartup  
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.206 in thread 23012
+Note: instruction: cmp    %eax $0x0000001a
+
+Error #2: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                       [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv        
+# 5 .text           
+# 6 mainCRTStartup  
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.208 in thread 23012
+Note: instruction: data16 mov    %cx -> 0x00000234(%ebx,%eax,2)
+
+Error #3: UNINITIALIZED READ: reading register eax
+# 0 KERNELBASE.dll!FindNextFileW 
+# 1 KERNELBASE.dll!FindNextFileA 
+# 2 .text                              [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 3 __mingw_glob                       [../../../src/gcc-6.3.0/libgcc/config/i386/cygwin.S:184]
+# 4 _setargv        
+# 5 .text           
+# 6 mainCRTStartup  
+# 7 ntdll.dll!__RtlUserThreadStart
+Note: @0:00:00.213 in thread 23012
+Note: instruction: test   %eax %eax
+
+Error #4: LEAK 4000 direct bytes 0x01310fa0-0x01311f40 + 0 indirect bytes
+# 0 replace_malloc               [D:\a\drmemory\drmemory\common\alloc_replace.c:2580]
+# 1 main            
+
+Error #5: POSSIBLE LEAK 4000 direct bytes 0x0143f2e0-0x01440280 + 0 indirect bytes
+# 0 replace_malloc               [D:\a\drmemory\drmemory\common\alloc_replace.c:2580]
+# 1 main            
+
+===========================================================================
+FINAL SUMMARY:
+
+DUPLICATE ERROR COUNTS:
+	Error #   4:   4987
+	Error #   5:     13
+
+SUPPRESSIONS USED:
+
+ERRORS FOUND:
+      0 unique,     0 total unaddressable access(es)
+      3 unique,     3 total uninitialized access(es)
+      0 unique,     0 total invalid heap argument(s)
+      0 unique,     0 total GDI usage error(s)
+      0 unique,     0 total handle leak(s)
+      0 unique,     0 total warning(s)
+      1 unique,  4987 total, 19948000 byte(s) of leak(s)
+      1 unique,    13 total,  52000 byte(s) of possible leak(s)
+ERRORS IGNORED:
+      7 unique,     7 total,   4591 byte(s) of still-reachable allocation(s)
+         (re-run with "-show_reachable" for details)
+Details: C:\Users\aisla\AppData\Roaming\Dr. Memory\DrMemory-memory_leak4.exe.828.000\results.txt
